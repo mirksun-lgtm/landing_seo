@@ -77,3 +77,12 @@ test('JS: меню, форма и слайдер доступны', () => {
   assert.match(html, /<noscript>[\s\S]*?t\.me\//);
   assert.match(html, /type="range"/);
 });
+
+test('форма отклоняет слишком короткий телефон', () => {
+  const html = read('index.html');
+  const input = html.match(/<input[^>]*id="client-tel"[^>]*>/)[0];
+  const pattern = input.match(/pattern="([^"]+)"/)[1];
+  const re = new RegExp(`^(?:${pattern})$`, 'v');
+  assert.equal(re.test('123'), false);
+  assert.equal(re.test('+7 999 123-45-67'), true);
+});

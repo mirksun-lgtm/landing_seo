@@ -48,7 +48,7 @@
 
   <header class="site-header">
     <div class="wrap site-header__inner">
-      <a class="logo" href="#hero" aria-label="Мастер Отделки — на главную">
+      <a class="logo" href="#hero">
         <span class="logo__mark" aria-hidden="true">МО</span>
         <span class="logo__text">Мастер Отделки</span>
       </a>
@@ -236,7 +236,7 @@
           <label for="client-name">Ваше имя</label>
           <input id="client-name" name="name" type="text" autocomplete="name" placeholder="Как к вам обращаться" required>
           <label for="client-tel">Телефон</label>
-          <input id="client-tel" name="tel" type="tel" autocomplete="tel" inputmode="tel" pattern="\+?[\d\s()\-]{10,}" placeholder="+7 999 000-00-00" required>
+          <input id="client-tel" name="tel" type="tel" autocomplete="tel" inputmode="tel" pattern="[\+0-9\s\-\(\)]{10,}" placeholder="+7 999 000-00-00" required>
           <button class="btn" type="submit">Подготовить заявку</button>
           <p class="form-status" role="status" aria-live="polite"></p>
           <noscript><p>Без JavaScript: <a href="https://t.me/your_username" target="_blank" rel="noopener noreferrer">напишите нам в Telegram</a> или позвоните по телефону.</p></noscript>
