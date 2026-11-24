@@ -37,7 +37,7 @@
 **Interfaces:**
 - Produces: корень проекта, тестовая база `tests/site.test.js` с хелпером `read(f)`.
 
-- [ ] **Step 1: Создать `AGENTS.md`** (до 30 строк): стек, команды `open index.html` / `node --test tests/`, структура, правила (плейсхолдеры, «пример», без зависимостей, деплой после подтверждения).
+- [ ] **Step 1: Создать `AGENTS.md`** (до 30 строк): стек, команды `open index.html` / `node --test tests/site.test.js`, структура, правила (плейсхолдеры, «пример», без зависимостей, деплой после подтверждения).
 
 - [ ] **Step 2: Создать `.gitignore`** с одной строкой `.DS_Store` (больше нечего игнорировать).
 
@@ -54,7 +54,7 @@ const read = (f) => fs.readFileSync(path.join(root, f), 'utf8');
 
 - [ ] **Step 4: Проверить запуск тестов**
 
-Run: `node --test tests/`
+Run: `node --test tests/site.test.js`
 Expected: PASS (пока 0 тестов; файл подключится позже).
 
 - [ ] **Step 5: Инициализировать git и коммит**
@@ -120,7 +120,7 @@ test('SEO-файлы: JSON-LD LocalBusiness, robots.txt, sitemap.xml', () => {
 
 - [ ] **Step 2: Запустить тесты, убедиться в падении**
 
-Run: `node --test tests/`
+Run: `node --test tests/site.test.js`
 Expected: FAIL (нет `index.html`).
 
 - [ ] **Step 3: Написать `index.html`** — `<html lang="ru">`, head с title «Ремонт квартир под ключ | Мастер Отделки», description 100–150 символов, `og:*`, `twitter:card`, canonical, JSON-LD `LocalBusiness` с	name/telephone/address/openingHoursSpecification/areaServed/url/image, `<link rel="preload">` на главное фото. body: skip-link, header с логотипом и `.nav-toggle` (`aria-expanded="false"`, `aria-controls="site-nav"`), `<nav id="site-nav">`, 8 `<section id=...>` с H2/H3, CTA-ссылки `https://t.me/your_username`, 4 карточки услуг с `.price-note` «цена пример», 4 шага, 3 кейса с парой фото «до/после» и `.compare__range`, 3 отзыва с «пример», FAQ на `<details>`, форма `id="request-form"` с `name`, `tel required type="tel" pattern="\+?[\d\s()\-]{10,}"`, `<p class="form-status" role="status" aria-live="polite">` и `<noscript>` со ссылкой в Telegram, футер с атрибуцией фото (CC0/CC BY + автор) и без «учебный проект».
@@ -137,7 +137,7 @@ Sitemap: https://example.github.io/landing_seo/sitemap.xml
 
 - [ ] **Step 6: Прогнать тесты**
 
-Run: `node --test tests/`
+Run: `node --test tests/site.test.js`
 Expected: PASS.
 
 - [ ] **Step 7: Коммит**
@@ -184,7 +184,7 @@ test('картинки локальные, с размерами и lazy-заг�
 
 - [ ] **Step 2: Прогнать тесты — ожидаемое падение**
 
-Run: `node --test tests/`
+Run: `node --test tests/site.test.js`
 Expected: FAIL (нет `styles.css` и картинок).
 
 - [ ] **Step 3: Скачать фото** CC0/CC BY (ремонт, отделка, интерьер) в `images/`, при необходимости переименовать в `work-1-before.jpg` … `work-3-after.jpg`, `hero.jpg`. Атрибуцию (автор, источник, лицензия) записать в футер `index.html` и в README. Если сеть недоступна — остановиться и сообщить Олегу, не выдумывать лицензию.
@@ -193,7 +193,7 @@ Expected: FAIL (нет `styles.css` и картинок).
 
 - [ ] **Step 5: Прогнать тесты**
 
-Run: `node --test tests/`
+Run: `node --test tests/site.test.js`
 Expected: PASS.
 
 - [ ] **Step 6: Коммит**
@@ -231,7 +231,7 @@ test('JS: меню, форма и слайдер доступны', () => {
 
 - [ ] **Step 2: Прогнать тесты — ожидаемое падение**
 
-Run: `node --test tests/`
+Run: `node --test tests/site.test.js`
 Expected: FAIL (нет `script.js`).
 
 - [ ] **Step 3: Написать `script.js`** — три независимые части:
@@ -241,7 +241,7 @@ Expected: FAIL (нет `script.js`).
 
 - [ ] **Step 4: Прогнать тесты**
 
-Run: `node --test tests/`
+Run: `node --test tests/site.test.js`
 Expected: PASS.
 
 - [ ] **Step 5: Коммит**
@@ -268,7 +268,7 @@ git commit -m "лендинг: форма, мобильное меню и сла
 
 - [ ] **Step 4: Прогнать все тесты**
 
-Run: `node --test tests/`
+Run: `node --test tests/site.test.js`
 Expected: PASS.
 
 - [ ] **Step 5: Коммит**
@@ -294,7 +294,7 @@ git commit -m "лендинг: визуальная доводка по скри
 
 - [ ] **Step 3: Финальная проверка**
 
-Run: `node --test tests/`
+Run: `node --test tests/site.test.js`
 Expected: PASS. Проверить, что `git status` чистый (кроме ожидающих подтверждения операций с remote).
 
 - [ ] **Step 4: Коммит**

@@ -8,7 +8,7 @@
 
 ## Команды
 - Открыть локально: `index.html` в браузере.
-- Тесты: `node --test tests/` (Node 24, без зависимостей).
+- Тесты: `node --test tests/site.test.js` (Node 24, без зависимостей).
 - Деплой: GitHub Pages, репозиторий `landing_seo`.
 
 ## Правила
