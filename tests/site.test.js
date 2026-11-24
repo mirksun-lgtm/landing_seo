@@ -65,3 +65,15 @@ test('картинки локальные, с размерами и lazy-заг�
   assert.ok(imgs.some((i) => /loading="lazy"/.test(i)));
   assert.ok(imgs.every((i) => /width="\d+"/.test(i) && /height="\d+"/.test(i)));
 });
+
+test('JS: меню, форма и слайдер доступны', () => {
+  const js = read('script.js');
+  const html = read('index.html');
+  assert.match(js, /Escape/);
+  assert.match(js, /aria-expanded/);
+  assert.match(js, /clipboard|execCommand/);
+  assert.match(js, /checkValidity/);
+  assert.match(html, /<script src="script.js" defer><\/script>/);
+  assert.match(html, /<noscript>[\s\S]*?t\.me\//);
+  assert.match(html, /type="range"/);
+});
